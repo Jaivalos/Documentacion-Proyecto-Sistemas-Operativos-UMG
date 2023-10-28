@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Proyecto Sistemas Operativos</title>
+    <link rel="canonical" href="https://my-antora-demo-site.org/component-b/2.0/index.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+</head>
+
+<body class="article">
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item">Proyecto Sistemas Operativos</a>
+
+            </div>
+
+            </div>
+            </div>
+        </nav>
+    </header>
+    <div class="body">
+
+        <main class="article">
+
+            <div class="content">
+                <aside class="toc sidebar" data-title="Contents" data-levels="2">
+                    <div class="toc-menu"></div>
+                </aside>
+                <article class="doc">
+                    <h1 class="page"><u>Proyecto implementación de Rabbit MQ</u></h1>
+                    <div id="preamble">
+                        <div class="sectionbody">
+                            <div class="paragraph">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sect1">
+                        <h2 id="Descripcion">Descripción</h2>
+                        <div class="paragraph">
+                            <p>El proyecto final de este curso se centra en la implementación y uso de RabbitMQ, una
+                                plataforma de mensajería que permite la comunicación entre aplicaciones de manera
+                                eficiente y confiable.</p>
+                            <br />
+                            <p>El proyecto consta de tres componentes clave: una aplicación "Sender", una aplicación
+                                “Receiver” y un servidor de RabbitMQ montado en una máquina virtual. </p>
+                            <br />
+                            <p>El propósito principal de esta implementación es demostrar la capacidad de enviar
+                                mensajes a varias colas de RabbitMQ desde la aplicación "Sender", y tener la capacidad
+                                de leer los mensajes de dichas colas en la aplicación “Receiver”. </p>
+                        </div>
+                        <div class="sect1">
+                            <h2 id="Descripcion">Rabbit MQ</h2>
+                            <div class="paragraph">
+                                <p>Es un sistema de mensajería, el cual se utiliza para comunicación y transferencia de
+                                    datos entre aplicaciones.
+
+                                    Implementa el protocolo de mensajería AMQP, el cual es un estándar para la
+                                    mensajería orientada a colas, y se enfoca en la comunicación de mensajes asíncronos
+                                    con la garantía de entrega.
+                                </p>
+                                <br />
+                                <p>
+                                    RabbitMQ cuenta con diversos componentes, entre los cuales:
+                                </p>
+                                <ul>
+                                    <li>Exchange: este será encargado de recibir los mensajes enviados al bróker por un
+                                        productor y depositarlos en la cola adecuada de acuerdo con nuestra llave de
+                                        enrutamiento (routing key).</li>
+                                    <li>Routing key: Esta es la llave que utiliza el Exchange para saber dónde enrutar
+                                        un mensaje y su vez es la misma que se usa la cola para asociarse con el
+                                        Exchange.</li>
+                                    <li>Cola: Este es el componente que guarda los mensajes provenientes de los
+                                        exchanges y se los envía a los consumidores que están escuchando los mensajes.
+                                    </li>
+                                </ul>
+                                <br />
+                                <p>
+                                    Gracias al uso de RabbitMQ es que logramos el intercambio de información desde una
+                                    aplicación Sender hasta una aplicación Receiver, asegurando así el envío de los
+                                    mensajes.
+                                </p>
+                            </div>
+
+                        </div>
+                        <h2 id="diagrama">Repositorios</h2>
+                        <div class="sectionbody">
+                            <div class="paragraph">
+
+
+                            </div>
+                            <div class="sect2">
+                                <h3 id="Diagrama_de_flujo">Sender Frontend</h3>
+                                <div class="paragraph">
+                                    <a target="_blank"
+                                        href="https://github.com/Jaivalos/EnvioDatosMQ">https://github.com/Jaivalos/EnvioDatosMQ</a>
+                                </div>
+                            </div>
+                            <div class="sect2">
+                                <h3 id="Diagrama_de_flujo">Receiver</h3>
+                                <div class="paragraph">
+                                    <a target="_blank"
+                                        href="https://github.com/MayenRosil/RabbitMQ-Receiver">https://github.com/MayenRosil/RabbitMQ-Receiver/</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 id="diagrama">Diagramas</h2>
+                        <div class="sectionbody">
+                            <div class="paragraph">
+
+
+                            </div>
+                            <div class="sect2">
+                                <h3 id="Diagrama_de_flujo">Diagrama de Arquitectura</h3>
+                                <div class="paragraph">
+                                    <p>El siguiente diagrama de arquitectura detalla los componentes de nuestro sistema.
+                                        Representando la conexión a los servidores, servicios
+                                        propios y de terceros, y la implementación de las librerías utilizadas. Sirve
+                                        como guía integral
+                                        para comprender la arquitectura del programa.</p>
+                                    <a target="_blank"
+                                        href="https://proyecto-sistemas-operativos-rabbitmq.s3.amazonaws.com/diagramas/Diagrama+de+Arquitectura+-+Proyecto+SO.pdf">Diagrama
+                                        de Arquitectura</a>
+                                </div>
+                            </div>
+                            <div class="sect2">
+                                <h3 id="Diagrama_de_flujo">Diagrama de Flujo</h3>
+                                <div class="paragraph">
+                                    <p>El siguiente diagrama de flujo detalla las etapas operativas de nuestro programa
+                                        que emplea colas RabbitMQ. Representando la conexión a la cola, el envío y
+                                        recepción de mensajes,
+                                        y posibles procedimientos de procesamiento y respuesta. Sirve como guía integral
+                                        para comprender el flujo del programa.</p>
+                                    <a target="_blank"
+                                        href="https://proyecto-sistemas-operativos-rabbitmq.s3.amazonaws.com/diagramas/Diagrama+de+Flujo+-+Proyecto+SO.pdf">Diagrama
+                                        de Flujo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sect1">
+                            <h2 id="Descripcion">Sender Frontend</h2>
+                            <div class="paragraph">
+                                <p>
+                                    Esta parte del código es la que se encarga de la interfaz visual, además de manejar
+                                    el envío del formulario, el cual valida si los campos de entrada han sido llenados,
+                                    para poder enviar el mensaje correspondiente.
+                                </p>
+                                <br />
+                                <p>
+                                    Este contiene la lógica visual del Sender, maneja un formulario con el cual se puede
+                                    seleccionar a qué cola desea realizar el envío, además de recibir el mensaje.
+                                </p>
+                                <br />
+                                <p>
+                                    Además, se agrega la opción de “Enviar Imagen”, la cual permite seleccionar una
+                                    imagen existente en la computadora donde se encuentra el navegador que ejecuta la
+                                    aplicación, y un campo que permite ingresar el nombre con el que la imagen se
+                                    guardará en el dispositivo que está escuchando la cola.
+                                </p>
+                                <br />
+                                <p>
+                                    Dentro de este aplicativo frontend, se realiza en consumo de nuestro API hecho en
+                                    NodeJS, enviándole los datos de la imagen en base64 o el mensaje, y la cola
+                                    seleccionada.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="sect1">
+                            <h2 id="Descripcion">Sender Backend</h2>
+                            <div class="paragraph">
+                                <p>
+                                    En este código definimos la parte lógica del Sender que nos ayudara a enviar los
+                                    mensajes. Al principio definimos los origines permitidos para los mensajes que
+                                    queremos enviar y validamos si estos orígenes están permitidos para que puedan ser
+                                    enviados en caso contrario se negara el origen.
+                                </p>
+                                <br />
+                                <p>
+                                    Ahora definimos la ruta por la cual nuestra solicitud será creada para enviar el
+                                    mensaje y recolectamos los datos del cuerpo de la petición. Antes de continuar
+                                    debemos conectarnos a nuestro servidor de Rabbit MQ para poder enviar los mensajes
+                                    por medio de él.
+                                </p>
+                                <br />
+                                <p>
+                                    Luego de realizar la conexión, se le define el nombre de la cola seleccionada y
+                                    enviara el mensaje a la misma. </p>
+                                <br />
+                                <p>
+                                    Dicha información, como el nombre de la cola a la que se enviará, el cuerpo del
+                                    mensaje y la información de la imagen; vendrá desde el Cuerpo de la petición hecha
+                                    desde el sitio frontend.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="sect1">
+                            <h2 id="Descripcion">Receiver</h2>
+                            <div class="paragraph">
+                                <p>
+                                    El código Listener actúa como un "oyente" que está atento a lo que sucede y toma
+                                    medidas en consecuencia. En esta parte se encargará de conectarse al servidor de
+                                    Rabbit MQ, definir la configuración y realizar el evento de la cola cuando reciba el
+                                    mensaje.
+                                </p>
+                                <br />
+                                <p>
+                                    Levanta dos hilos, uno escuchando cada cola existente.
+                                    <br />
+                                    En cada uno, realiza una conexión a RabbitMQ hacia la cola correspondiente, y
+                                    escucha si existen mensajes en dicha cola, mostrándolos con un color característico
+                                    para cada una.
+
+                                </p>
+                                <br />
+                                <p>
+                                    Cuando un mensaje es recibido en la cola1, este se muestra en pantalla y luego se
+                                    ejecuta una función Sender dentro del mismo código, la cual se llama 8 veces y le
+                                    reenvía dicho mensaje a la cola2. </p>
+                                <br />
+                                <p>
+                                    Cuando un mensaje es recibido en la cola2, tiene dos posibles acciones, o mostrar el
+                                    texto sin formato tal y como viene, o identifica si es un mensaje con una imagen
+                                    base64 incluido, si es este segundo caso, se crea una nueva carpeta en el disco C
+                                    llamada “descargasRabbit” y se guarda dicho archivo en esa carpeta.
+                                    <br />
+                                    Esto se hace al des-serializar la información de la imagen para luego convertirla en
+                                    un archivo extensión PNG, el cual es guardado en el disco local.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="sect1">
+                            <h2 id="Descripcion">Sender desde el Receiver</h2>
+                            <div class="paragraph">
+                                <p>
+                                    La principal tarea de esta función es recibir el mensaje encontrado en la cola1, y
+                                    luego se envía a la cola2, esto creando una nueva conexión con el servidor RabbitMQ
+                                    pero ahora se ejecutan las funciones de escritura dentro de la misma. </p>
+                                <br />
+                                <p>
+                                    Dicho mensaje se envía explícitamente a la cola2, la cual sigue escuchando en el
+                                    otro hilo del Receiver, y recibe dichos mensajes, con un distintivo, informando que
+                                    vienen desde la cola1. </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="sect1">
+                        <h2 id="Instalación">Instalación del Receiver</h2>
+                        <div class="sectionbody">
+                            <div class="paragraph">
+                                <p>
+                                <ol>
+                                    <li>Descargar el <a target="_blank"
+                                            href="https://proyecto-sistemas-operativos-rabbitmq.s3.amazonaws.com/Ejecutable+del+Receiver/Aplicativo+Receiver.zip">archivo comprimido de la aplicación</a> y verificar que contenga lo
+                                        siguiente:
+
+                                        <ul>
+                                            <li>
+                                                <p><code>Microsoft.WindowsAPICodePack.dll</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>Microsoft.WindowsAPICodePack.Shell.dll</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>Microsoft.WindowsAPICodePack.Shell.xml</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>Microsoft.WindowsAPICodePack.xml</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>Newtonsoft.Json.dll</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>Newtonsoft.Json.xml</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>RabbitMQ.Client.dll</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>RabbitMQ.Client.xml</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>RabbitReceiver.exe</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>RabbitReceiver.exe.config</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>RabbitReceiver.pdb</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>System.Buffers.dll</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>System.Buffers.xml</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>System.Memory.dll</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>System.Memory.xml</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>System.Numerics.Vectors.dll</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>System.Numerics.Vectors.xml</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>System.Runtime.CompilerServices.Unsafe.dll</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>System.Runtime.CompilerServices.Unsafe.xml</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>System.Threading.Channels.dll</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>System.Threading.Channels.xml</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>System.Threading.Tasks.Extensions.dll</code>.</p>
+                                            </li>
+                                            <li>
+                                                <p><code>System.Threading.Tasks.Extensions.xml</code>.</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <br />
+                                    <li>Ejecutar el archivo <strong>RabbitReceiver.exe</strong><br />
+                                        <ul>
+                                            <p> Se mostrara una consola de CMD, la cual indica que las colas están
+                                                escuchando.</p>
+                                    </li>
+                                </ol>
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="sect1">
+                        <h2 id="Instalación">Ejecución del Sender</h2>
+                        <div class="sectionbody">
+                            <div class="paragraph">
+                                <p>
+                                <ol>
+                                    <li>El servicio del Backend está corriendo siempre activo, escuchando las peticiones
+                                        que se le realizan.
+                                        <br />
+                                        Este se consume mediante la URL: <a>https://proyectomq.alliedg.tk/user</a>
+
+                                    </li>
+                                    <br />
+                                    <li>El servicio del Frontend está desplegado usando Github Pages.
+                                        <br />
+                                        Este se puede utilizar mediante la URL: <a target="_blank"
+                                            href="https://jaivalos.github.io/EnvioDatosMQ/">https://jaivalos.github.io/EnvioDatosMQ/</a>
+
+                                    </li>
+                                </ol>
+                                </p>
+                            </div>
+                            <div class="paragraph">
+                                <p></code>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+            </div>
+            </article>
+    </div>
+    </main>
+    </div>
+    <footer class="footer">
+        <p>Hecho con amor por Kenny Amadeus y Julio Mayén.</p>
+    </footer>
+    <script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+    <script async src="../../_/js/vendor/highlight.js"></script>
+</body>
+
+</html>
